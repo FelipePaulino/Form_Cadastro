@@ -94,10 +94,10 @@ const App: React.FC = () => {
     const filtrar = dados.filter((dadosUnico: any) => {
       return dadosUnico.cpf !== edit.cpf;
     });
-
     var Nome = (document.getElementById(edit.nome) as HTMLInputElement).value;
     var Data = (document.getElementById(edit.data) as HTMLInputElement).value;
     var Cpf = (document.getElementById(edit.cpf) as HTMLInputElement).value;
+
     var Celular = (document.getElementById(edit.celular) as HTMLInputElement)
       .value;
 
@@ -105,8 +105,9 @@ const App: React.FC = () => {
     var Endereco = (document.getElementById(edit.endereco) as HTMLInputElement)
       .value;
     var Observacoes = (document.getElementById(
-      edit.observacoes
+      "inputObservacoesEdit"
     ) as HTMLInputElement).value;
+
     const regex = /^(?=.*[@!#$%^&*()/\\])[@!#$%^&*()/\\a-zA-Z0-9]{8,20}$/;
     const validaEmail = Email.indexOf("@");
     const CpfValido = validarCpf(Cpf);
@@ -122,6 +123,7 @@ const App: React.FC = () => {
       endereco: Endereco,
       observacoes: Observacoes,
     };
+
     filtrar.push(auxRegistro);
 
     if (
@@ -414,7 +416,7 @@ const App: React.FC = () => {
             <label>Observação:</label>
             <textarea
               name="inputObservacoes"
-              id={edit.observacoes}
+              id="inputObservacoesEdit"
               defaultValue={edit.observacoes}
             ></textarea>{" "}
             <br></br>
